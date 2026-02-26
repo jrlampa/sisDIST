@@ -1,5 +1,5 @@
 """Infrastructure domain DB models — Pole, Conductor, Equipment."""
-from datetime import datetime
+from datetime import datetime, timezone
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from app.core.database import Base
@@ -37,7 +37,7 @@ class Pole(Base):
     owner = Column(String(50), nullable=True)
     observations = Column(Text, nullable=True)
     installed_at = Column(DateTime, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     conductors_from = relationship("Conductor", foreign_keys="Conductor.pole_from_id", back_populates="pole_from")
     conductors_to = relationship("Conductor", foreign_keys="Conductor.pole_to_id", back_populates="pole_to")
@@ -57,7 +57,7 @@ class Conductor(Base):
     phases = Column(Integer, nullable=False, default=3)
     length = Column(Float, nullable=True)
     observations = Column(Text, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     pole_from = relationship("Pole", foreign_keys=[pole_from_id], back_populates="conductors_from")
     pole_to = relationship("Pole", foreign_keys=[pole_to_id], back_populates="conductors_to")
@@ -72,6 +72,6 @@ class Equipment(Base):
     manufacturer = Column(String(100), nullable=True)
     model = Column(String(100), nullable=True)
     observations = Column(Text, nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     pole = relationship("Pole", back_populates="equipments")

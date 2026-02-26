@@ -1,5 +1,5 @@
 """Projects domain service."""
-from datetime import datetime
+from datetime import datetime, timezone
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.domains.projects.repository import ProjectRepository
 from app.domains.projects.models import Project
@@ -31,7 +31,7 @@ class ProjectService:
             return None
         for field, value in payload.model_dump(exclude_unset=True).items():
             setattr(project, field, value)
-        project.updated_at = datetime.utcnow()
+        project.updated_at = datetime.now(timezone.utc)
         await self.repo.db.flush()
         await self.repo.db.refresh(project)
         return ProjectResponse.model_validate(project)
