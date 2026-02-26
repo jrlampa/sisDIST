@@ -1,0 +1,17 @@
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.pytest_cache
+**/node_modules
+**/dist
+**/build
+**/.cache
+**/.venv
+**/venv
+**/.env
+**/*.log
+**/*.sqlite
+**/*.db
+.git
+README.md
+MEMORY.md

@@ -1,0 +1,73 @@
+/** pt-BR translations */
+const ptBR = {
+  app: {
+    title: 'sisDIST',
+    subtitle: 'Sistema de Distribuição Elétrica',
+  },
+  nav: {
+    dashboard: 'Painel',
+    map: 'Mapa',
+    calculations: 'Cálculos',
+    projects: 'Projetos',
+  },
+  dashboard: {
+    welcome: 'Bem-vindo ao sisDIST',
+    description: 'Ferramenta para engenheiros elétricos — Enel-RJ e Light',
+  },
+  poles: {
+    title: 'Postes',
+    code: 'Código',
+    type: 'Tipo',
+    height: 'Altura (m)',
+    class: 'Classe',
+    owner: 'Proprietário',
+    elevation: 'Altitude (m)',
+    concrete: 'Concreto',
+    wood: 'Madeira',
+    steel: 'Aço',
+  },
+  conductors: {
+    title: 'Condutores',
+    type: 'Tipo',
+    section: 'Seção (mm²)',
+    voltage: 'Tensão',
+    phases: 'Fases',
+    length: 'Comprimento (m)',
+  },
+  calculations: {
+    voltageDrop: 'Queda de Tensão',
+    mechanicalStress: 'Esforço Mecânico',
+    current: 'Corrente (A)',
+    length: 'Comprimento (m)',
+    crossSection: 'Seção Transversal (mm²)',
+    powerFactor: 'Fator de Potência',
+    nominalVoltage: 'Tensão Nominal (V)',
+    phases: 'Número de Fases',
+    conductorType: 'Tipo de Condutor',
+    result: 'Resultado',
+    compliant: 'Conforme',
+    nonCompliant: 'Não Conforme',
+  },
+  projects: {
+    title: 'Projetos',
+    name: 'Nome',
+    description: 'Descrição',
+    concessionaire: 'Concessionária',
+    createdAt: 'Criado em',
+    materialList: 'Lista de Material',
+  },
+  common: {
+    save: 'Salvar',
+    cancel: 'Cancelar',
+    delete: 'Excluir',
+    edit: 'Editar',
+    add: 'Adicionar',
+    calculate: 'Calcular',
+    loading: 'Carregando...',
+    error: 'Erro',
+    success: 'Sucesso',
+    noData: 'Nenhum dado encontrado',
+  },
+}
+
+export default ptBR
